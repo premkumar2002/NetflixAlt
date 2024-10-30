@@ -1,5 +1,8 @@
 - Create react app
 - configure tailwind css
+- header
+- Login form
+- Sign up form
 
 
 # features 
