@@ -11,6 +11,9 @@
 - Implemented sigin user api
 - created redux store with userSlice
 - Implemented sign out
+- If user is not logged in redirect to login page if logged in direct to browse page
+- Fecth data from TMDB movies
+
 
 
 

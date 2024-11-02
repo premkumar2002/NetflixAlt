@@ -8,14 +8,13 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebas"; // Ensure this path is correct
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { LOGINBG } from "../utils/constants";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(false);
   const [errormessage, setErrorMessage] = useState(null);
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const toggleSignIn = () => {
@@ -52,20 +51,17 @@ const Login = () => {
         const user = userCredential.user;
         updateProfile(user, {
           displayName: name.current.value,
-          photoURL: "https://avatars.githubusercontent.com/u/83492386?v=4",
         })
           .then(() => {
             // Profile updated!
-            const { uid, email, displayName, photoURL } = auth.currentUser;
+            const { uid, email, displayName } = auth.currentUser;
             dispatch(
               addUser({
                 uid: uid,
                 email: email,
                 displayName: displayName,
-                photoURL: photoURL,
               })
             );
-            navigate("/browse");
           })
           .catch((error) => {
             // An error occurred
@@ -86,7 +82,6 @@ const Login = () => {
         );
         // Signed in
         const user = userCredential.user;
-        navigate("/browse");
       } catch (error) {
         const errorCode = error.code;
         const errorMessage = error.message;
@@ -100,8 +95,8 @@ const Login = () => {
       <Header />
       <div className="absolute inset-0">
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/74d734ca-0eab-4cd9-871f-bca01823d872/web/IN-en-20241021-TRIFECTA-perspective_2277eb50-9da3-4fdf-adbe-74db0e9ee2cf_medium.jpg"
-          alt="Login"
+          src={LOGINBG}
+          alt="LoginBG"
           className="w-full h-full object-cover"
         />
         {/* Vignette Overlay */}
