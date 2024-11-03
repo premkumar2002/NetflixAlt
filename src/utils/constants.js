@@ -13,3 +13,4 @@ export const API_Options = {
 
   export const YOUTUBE_URL = "https://www.youtube.com/watch?v=";
   
+  export const IMG_CDN = "https://image.tmdb.org/t/p/w200"

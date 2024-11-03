@@ -8,7 +8,7 @@ const VideoTitle = ({ title, overview }) => {
   };
 
   return (
-    <div className="w-screen px-8 pt-[40%] absolute aspect-video">
+    <div className="w-screen px-8 pt-[27%] absolute aspect-video">
       <h1 className="font-extrabold text-4xl pb-2 text-white">{title}</h1>
       {showOverview && (
         <p className="italic text-sm w-3/4 text-white">{overview}</p>

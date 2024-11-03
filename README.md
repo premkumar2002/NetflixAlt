@@ -13,6 +13,8 @@
 - Implemented sign out
 - If user is not logged in redirect to login page if logged in direct to browse page
 - Fecth data from TMDB movies
+- custom hook for now playing movies
+- cretaed a movie slice
 
 
 
