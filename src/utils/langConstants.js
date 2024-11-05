@@ -1,0 +1,25 @@
+const lang = {
+  en: { search: "Search", gptPlaceHolder: "What movie/TV series would you like to watch?" },
+  zh: { search: "搜索", gptPlaceHolder: "您想看什么电影/电视剧？" },
+  hi: { search: "खोज", gptPlaceHolder: "आप कौन सी फिल्म/टीवी सीरीज देखना चाहेंगे?" },
+  es: { search: "Buscar", gptPlaceHolder: "¿Qué película o serie de TV te gustaría ver?" },
+  fr: { search: "Recherche", gptPlaceHolder: "Quel film ou série TV souhaitez-vous regarder ?" },
+  ar: { search: "بحث", gptPlaceHolder: "ما الفيلم/المسلسل التلفزيوني الذي ترغب في مشاهدته؟" },
+  bn: { search: "অনুসন্ধান", gptPlaceHolder: "আপনি কোন সিনেমা/টিভি সিরিজটি দেখতে চান?" },
+  ru: { search: "Поиск", gptPlaceHolder: "Какой фильм/сериал вы хотите посмотреть?" },
+  pt: { search: "Pesquisar", gptPlaceHolder: "Que filme/série de TV você gostaria de assistir?" },
+  ur: { search: "تلاش کریں", gptPlaceHolder: "آپ کون سی فلم/ٹی وی سیریز دیکھنا چاہیں گے؟" },
+  ja: { search: "検索", gptPlaceHolder: "どの映画/テレビシリーズを見たいですか？" },
+  de: { search: "Suche", gptPlaceHolder: "Welchen Film/Serie möchten Sie sehen?" },
+  ko: { search: "검색", gptPlaceHolder: "어떤 영화/TV 시리즈를 보고 싶으신가요?" },
+  vi: { search: "Tìm kiếm", gptPlaceHolder: "Bạn muốn xem phim/bộ phim nào?" },
+  it: { search: "Ricerca", gptPlaceHolder: "Quale film/serie TV vorresti guardare?" },
+  ta: { search: "தேடல்", gptPlaceHolder: "நீங்கள் பார்க்க விரும்பும் படம்/தொலைக்காட்சி தொடர் எது?" },
+  te: { search: "శోధన", gptPlaceHolder: "మీరు ఎలాంటి సినిమా/టీవీ సిరీస్ చూడాలనుకుంటున్నారు?" },
+  tr: { search: "Arama", gptPlaceHolder: "Hangi film/TV dizisini izlemek istersiniz?" },
+  fa: { search: "جستجو", gptPlaceHolder: "کدام فیلم/سریال تلویزیونی را می‌خواهید ببینید؟" },
+  pl: { search: "Szukaj", gptPlaceHolder: "Jaki film/serial chciałbyś obejrzeć?" },
+  nl: { search: "Zoeken", gptPlaceHolder: "Welke film/TV-serie wil je kijken?" },
+};
+
+export default lang;

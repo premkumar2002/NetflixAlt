@@ -11,7 +11,7 @@ const MinContainer = () => {
   const {original_title, overview, id} = mainmovie;
   
   return (
-    <div>
+    <div className="relative overflow-hidden pb-12 md:pb-24">
       <VideoTitle title={original_title} overview={overview}/>
       <VideoBackground movieId={id}/>
     </div>

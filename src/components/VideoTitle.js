@@ -8,13 +8,13 @@ const VideoTitle = ({ title, overview }) => {
   };
 
   return (
-    <div className="w-screen px-8 pt-[27%] absolute aspect-video">
+    <div className="w-full px-8 pt-[27%] absolute aspect-video">
       <h1 className="font-extrabold text-4xl pb-2 text-white">{title}</h1>
       {showOverview && (
         <p className="italic text-sm w-3/4 text-white">{overview}</p>
       )}
       <div className="flex space-x-2 pt-4 mb-10">
-        <button className="border border-gray p-2 px-6 font-mono font-extrabold  text-1xl rounded-md bg-white text-slate-950 hover:bg-opacity-90">
+        <button className="border border-gray p-2 px-6 font-mono font-extrabold text-1xl rounded-md bg-white text-slate-950 hover:bg-opacity-90">
           ▶ Play
         </button>
         <button

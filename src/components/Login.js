@@ -93,7 +93,7 @@ const Login = () => {
   return (
     <div className="h-screen relative">
       <Header />
-      <div className="absolute inset-0">
+      <div className="fixed inset-0">
         <img
           src={LOGINBG}
           alt="LoginBG"

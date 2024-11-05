@@ -13,3 +13,13 @@
       scrollbar-width: none; /* Firefox */
     }
 }
+
+.custom-dropdown {
+  max-height: 10rem; /* Adjust this value as needed for height */
+  overflow-y: auto; /* Allows vertical scrolling when content exceeds the height */
+  scrollbar-width: none; /* Firefox */
+}
+
+.custom-dropdown::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
