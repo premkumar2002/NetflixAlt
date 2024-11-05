@@ -5,8 +5,6 @@ const MoviesSuggestions = () => {
   const { movieResults, movieNames } = useSelector((store) => store.gpt);
 
   // Log for debugging
-  console.log("MovieNames:", movieNames);
-  console.log("movieResults:", movieResults);
 
 
   return (

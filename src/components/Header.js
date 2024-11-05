@@ -100,23 +100,22 @@ const Header = () => {
   const handleSearchClick = () => dispatch(toggleGptSearchView());
   const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
 
-
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 px-8 py-6 bg-gradient-to-b from-black w-screen flex items-start justify-between">
+    <div className="fixed top-0 left-0 right-0 z-50 px-1 md:px-8 md:py-4 py-2 bg-gradient-to-b from-black w-screen flex items-start md:justify-between flex flex-auto md:flex-row justify-between">
       <img src={LOGO} alt="logo" className="h-16 w-auto cursor-pointer" />
       {user && (
         <div className="relative flex items-center space-x-2">
           {showGptSearch && (
             <CustomDropdown
-            options={SLANG}
-            selected={SLANG.find((lang) => lang.identifier === selectedLang)} // Select language based on Redux state
-            onChange={handleLangChange}
-          />
+              options={SLANG}
+              selected={SLANG.find((lang) => lang.identifier === selectedLang)} // Select language based on Redux state
+              onChange={handleLangChange}
+            />
           )}
 
           <button
             type="submit"
-            className="flex items-center text-md font-medium text-white bg-black rounded-full bg-opacity-100 hover:bg-opacity-30 transition duration-200 p-2"
+            className="flex items-center text-md font-medium text-white bg-black rounded-full bg-opacity-100 hover:bg-opacity-30 transition duration-200 p-2 w-15"
             onClick={handleSearchClick}
           >
             <span className="mr-2">{!showGptSearch ? "Search" : "Home"}</span>
@@ -139,7 +138,7 @@ const Header = () => {
           <img
             src={user_logo}
             alt="user logo"
-            className="w-10 cursor-pointer rounded-md"
+            className="md:w-10 w-6 cursor-pointer rounded-md"
             onClick={toggleDropdown}
           />
           {dropdownOpen && (

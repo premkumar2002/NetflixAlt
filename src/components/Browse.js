@@ -15,7 +15,7 @@ const Browse = () => {
   useTopRatedMovies();
   useUpComingMovies();
   return (
-    <div className="relative overflow-x-hidden">
+    <div className="relative overflow-x-hidden bg-black space-y-3 -z-0">
       <Header />
       {showGptSearch ? (
         <AISearch />

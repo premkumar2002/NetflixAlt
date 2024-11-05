@@ -2,7 +2,6 @@ import lang from "../utils/langConstants";
 import { useDispatch, useSelector } from "react-redux";
 import { useRef, useState } from "react"; // Import useState
 import openapi from "../utils/openai";
-import { API_Options } from "../utils/constants";
 import { addGptMovieResult } from "../utils/gptSlice";
 
 const AiSearchbar = () => {
@@ -10,6 +9,14 @@ const AiSearchbar = () => {
   const searchText = useRef(null);
   const dispatch = useDispatch();
 
+  const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwYmQzOWQxZDc0MDY5NjdiNjE4ZTAwNTE2MjdhM2RmZiIsIm5iZiI6MTczMDc4NjA5MS41NTE2NTksInN1YiI6IjY2MjRmODkwMjU4ODIzMDE2NDkwZWMxYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.J_CA-Hic7BWx7KxoT8wbD3qLuGObnuw6IJ38JpQlPes'
+    }
+  };
+  
   // State for managing error messages
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -18,9 +25,10 @@ const AiSearchbar = () => {
       "https://api.themoviedb.org/3/search/movie?query=" +
         movie +
         "&include_adult=false&language=en-US&page=1",
-      API_Options
+      options
     );
     const json = await data.json();
+    console.log(json);
     return json.results;
   };
 
@@ -30,6 +38,7 @@ const AiSearchbar = () => {
         "Act as a Movie Recommendation system and suggest some movie for the query: " +
         searchText.current.value +
         ". only give me names of 5 movies, comma separated.";
+        
       const completion = await openapi.chat.completions.create({
         model: "gpt-3.5-turbo",
         messages: [{ role: "user", content: query }],
@@ -38,7 +47,6 @@ const AiSearchbar = () => {
       });
 
       const response = completion.choices?.[0]?.message?.content.split(",");
-
       if (!response || response.length === 0) {
         throw new Error("No movies returned from GPT.");
       }
@@ -60,7 +68,7 @@ const AiSearchbar = () => {
   };
 
   return (
-    <div className="pt-[8%] px-4">
+    <div className="pt-[40%] md:pt-[10%] sm:pt-[23%] px-4">
       <form
         className="bg-black rounded-full mx-auto text-center flex justify-between items-center max-w-xl sm:max-w-2xl lg:max-w-3xl"
         onSubmit={(e) => e.preventDefault()}
